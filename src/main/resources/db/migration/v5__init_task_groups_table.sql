@@ -1,4 +1,4 @@
-CREATE TABLE tasks (
+CREATE TABLE tasks_groups (
 id int PRIMARY KEY AUTO_INCREMENT,
 description VARCHAR(100) NOT NULL,
 done bit

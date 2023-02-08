@@ -24,6 +24,8 @@ public class Task {
         this.description = description;
         this.deadline = deadline;
     }
+    Task() {
+    }
     public void updateFrom(Task source) {
         description = source.description;
         done = source.done;

@@ -17,14 +17,14 @@ public class GroupReadModel {
     private LocalDateTime deadline;
     private Set<GroupTaskReadModel> tasks;
 
-    public GroupReadModel(TaskGroup source){
+    public GroupReadModel(TaskGroup source) {
         description = source.getDescription();
         source.getTasks().stream()
                 .map(Task::getDeadline)
                 .max(LocalDateTime::compareTo)
                 .ifPresent(date -> deadline = date);
-        tasks = source.getTasks()
-                .stream().map(GroupTaskReadModel::new)
+        tasks = source.getTasks().stream()
+                .map(GroupTaskReadModel::new)
                 .collect(Collectors.toSet());
     }
 }
