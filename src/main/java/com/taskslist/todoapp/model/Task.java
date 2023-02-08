@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "tasks")
 @Data
-
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,7 +20,10 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "task_group_id")
     private TaskGroup group;
-
+    public Task(String description, LocalDateTime deadline){
+        this.description = description;
+        this.deadline = deadline;
+    }
     public void updateFrom(Task source) {
         description = source.description;
         done = source.done;
